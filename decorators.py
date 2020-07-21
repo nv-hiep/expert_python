@@ -90,12 +90,12 @@ print(double(5))
 
 print()
 print('==================')
-def stick_with_a_string(func):
+def prepend_a_string(func):
 	def wrapper(x):
 		return 'This is the result : ' + str( func(x) )
 	return wrapper
 
-@stick_with_a_string
+@prepend_a_string
 def double(x):
 	return 2*x
 
@@ -107,7 +107,7 @@ print(double(5))
 
 print()
 print('Same as:')
-def stick_with_a_string(func):
+def prepend_a_string(func):
 	def wrapper(x):
 		return 'This is the result : ' + str( func(x) )
 	return wrapper
@@ -118,6 +118,6 @@ def double(x):
 	return 2*x
 
 
-double = stick_with_a_string(double)
+double = prepend_a_string(double)
 
 print(double(5))
